@@ -6,7 +6,7 @@ DOCKER_USERNAME=$2
 DOCKER_PASSWORD=$3
 
 # Create publish artifact
-dotnet publish -c Release -o /app
+dotnet publish -c Release -o app
 
 # Build the Docker images
 docker build -t burja8x/rsosem1:$TAG /rsoSem1/RsoSem1/bin/Release/netcoreapp2.1/.
