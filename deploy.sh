@@ -9,7 +9,7 @@ DOCKER_PASSWORD=$3
 dotnet publish -c Release -o app
 
 # Build the Docker images
-docker build -t burja8x/rsosem1:$TAG /rsoSem1/RsoSem1/bin/Release/netcoreapp2.1/.
+docker build -t burja8x/rsosem1:$TAG app/.
 docker tag burja8x/rsosem1:$TAG burja8x/rsosem1:latest
 
 # Login to Docker Hub and upload images
