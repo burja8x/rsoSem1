@@ -1,0 +1,8 @@
+{
+  "clani": [ "ab9501" ],
+  "opis_projekta": "Moj projekt je izdelan v .NET Core. Namen aplikacije je, da me obvesca preko SMS ali Mail-a v primeru da cena neke X kriptovalute na doloceni kriptoborzi precka doloceno ceno.. katera je nastavljena v neki bazi. aplikacija tudi spremlja odprte pozicije uporabnika, v primeru da se order izvede se obvesti uporabnika(odvisno kako je nastavljeno v bazi.)",
+  "mikrostoritve": [ "http://35.189.96.118:8081/api/reports" ],
+  "github": [ "https://github.com/burja8x/rsoSem1" ],
+  "travis": [ "https://travis-ci.org/burja8x/rsoSem1" ],
+  "dockerhub": [ "https://hub.docker.com/r/burja8x/rsoReport/" ]
+}
