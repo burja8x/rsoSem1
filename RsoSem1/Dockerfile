@@ -7,5 +7,4 @@ EXPOSE 443
 COPY /app .
 RUN ls
 RUN pwd
-RUN ls app
 ENTRYPOINT ["dotnet", "RsoSem1.dll"]
