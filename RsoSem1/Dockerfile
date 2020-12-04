@@ -4,5 +4,8 @@ RUN pwd
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-COPY . /app
+COPY /app .
+RUN ls
+RUN pwd
+RUN ls app
 ENTRYPOINT ["dotnet", "RsoSem1.dll"]
