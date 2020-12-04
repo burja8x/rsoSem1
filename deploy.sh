@@ -8,6 +8,7 @@ DOCKER_PASSWORD=$3
 # Create publish artifact
 dotnet publish -c Release -o app
 
+ls app
 # Build the Docker images
 docker build -t burja8x/rsosem1:$TAG RsoSem1/.
 docker tag burja8x/rsosem1:$TAG burja8x/rsosem1:latest
