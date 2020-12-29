@@ -1,10 +1,25 @@
-FROM microsoft/dotnet:2.1-aspnetcore-runtime
-RUN ls
-RUN pwd
+FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
+
+# local build ...
+#FROM microsoft/dotnet:2.1-sdk AS build
+#WORKDIR /src
+#COPY ["RsoSem1/RsoSem1.csproj", "RsoSem1/"]
+#RUN dotnet restore "RsoSem1/RsoSem1.csproj"
+#COPY . .
+#WORKDIR "/src/RsoSem1"
+#RUN dotnet build "RsoSem1.csproj" -c Release -o /app
+#
+#FROM build AS publish
+#RUN dotnet publish "RsoSem1.csproj" -c Release -o /app
+#
+#FROM base AS final
+#WORKDIR /app
+#COPY --from=publish /app .
+
+# travis-ci build
 COPY /app .
-RUN ls
-RUN pwd
+
 ENTRYPOINT ["dotnet", "RsoSem1.dll"]

@@ -4,18 +4,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace RsoSem1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class ReportsController : ControllerBase
     {
+        private readonly Settings _settings;
+        public ReportsController(IOptionsSnapshot<Settings> settings)
+        {
+            _settings = settings.Value;
+        }
         // GET api/reports
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "Test", "working" };
+            return new string[] { "Test", _settings.Message };
         }
 
         // GET api/reports/5
